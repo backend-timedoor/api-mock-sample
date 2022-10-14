@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\ApiDocController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('api-doc'));
 });
+
+Route::get('api-doc/{version?}', [ApiDocController::class, 'view'])
+    ->name('api-doc')
+    ->where('version', implode(config('api.versions')));

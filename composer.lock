@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccbd816a07b206f971042295b899d1ba",
+    "content-hash": "f780ddb9ef83150c7529b05f3972dce9",
     "packages": [
         {
             "name": "brick/math",
@@ -5149,6 +5149,50 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.5"
             },
             "time": "2022-09-12T13:28:28+00:00"
+        },
+        {
+            "name": "timedoor/tmd-basic-auth",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/backend-timedoor/basic-auth.git",
+                "reference": "0e7ca370884efd90bdb03deea419a225320b45d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/backend-timedoor/basic-auth/zipball/0e7ca370884efd90bdb03deea419a225320b45d6",
+                "reference": "0e7ca370884efd90bdb03deea419a225320b45d6",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Timedoor\\TmdBSA\\TmdBasicAuthProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Timedoor\\TmdBSA\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Edwin Diradinata",
+                    "email": "edwin@timedoor.net"
+                }
+            ],
+            "description": "Basic auth timedoor",
+            "support": {
+                "issues": "https://github.com/backend-timedoor/basic-auth/issues",
+                "source": "https://github.com/backend-timedoor/basic-auth/tree/1.0.2"
+            },
+            "time": "2022-01-03T03:34:37+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
