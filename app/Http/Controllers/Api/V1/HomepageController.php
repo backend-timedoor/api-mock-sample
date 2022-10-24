@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
-    public function mock($param1 = null, $param2 = null)
+    public function mock()
     {
         return empty_response();
+    }
+    
+    public function mockArray()
+    {
+        return empty_array_response();
     }
 }
