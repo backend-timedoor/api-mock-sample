@@ -11,3 +11,9 @@ if (! function_exists('empty_array_response')) {
         return response(['data' => []]);
     }
 }
+
+if (! function_exists('data_response')) {
+    function data_response($data) {
+        return response(['data' => $data]);
+    }
+}
