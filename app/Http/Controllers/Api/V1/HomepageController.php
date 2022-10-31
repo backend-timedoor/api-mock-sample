@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\V1\ApiMockResource;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
@@ -115,7 +116,7 @@ class HomepageController extends Controller
             ],
         ];
 
-        return data_response($data);
+        return ApiMockResource::collection($this->paginate($request, $data));
     }
     
     public function workoutsDetail()
@@ -314,5 +315,14 @@ class HomepageController extends Controller
          ]; 
 
         return data_response($countries);
+    }
+
+    public function paginate($request, $items, $page = null, $perPage = 15)
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+        $options = ['path' => $request->url(), 'query' => $request->query()];
+        
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
     }
 }

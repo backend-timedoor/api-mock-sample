@@ -80,7 +80,6 @@ trait ExceptionFormatter
         }
 
         $status  = $this->isHttpException($e) ? $e->getStatusCode() : 500;
-        // dd($e);
         $message = $this->isHttpException($e) ? $e->getMessage() : 'Server Error';
         $title   = $this->mapErrorTitle($status);
 
