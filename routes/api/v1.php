@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('countries', [HomepageController::class, 'countries']);
 
 Route::post('register', [HomepageController::class, 'register']);
@@ -29,7 +25,7 @@ Route::post('reset-password', [HomepageController::class, 'mock']);
 Route::post('login', [HomepageController::class, 'register']);
 Route::patch('firebase-token', [HomepageController::class, 'mock']);
 Route::post('change-password', [HomepageController::class, 'mock']);
-Route::get('logout', [HomepageController::class, 'mock']);
+Route::post('logout', [HomepageController::class, 'mock']);
 
 Route::post('subscription', [HomepageController::class, 'mock']);
 Route::get('subscription', [HomepageController::class, 'subscription']);

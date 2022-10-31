@@ -88,10 +88,12 @@ class HomepageController extends Controller
                     "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
                 ], 
                 "workouts" => [
-                    "id" => 1, 
-                    "thumbnail" => "https://picsum.photos/200", 
-                    "name" => "Workout 1 - Split", 
-                    "duration" => "45 Minutes" 
+                    [
+                        "id" => 1, 
+                        "thumbnail" => "https://picsum.photos/200", 
+                        "name" => "Workout 1 - Split", 
+                        "duration" => "45 Minutes",
+                    ]
                 ],
             ],
             [
@@ -103,10 +105,12 @@ class HomepageController extends Controller
                     "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
                 ], 
                 "workouts" => [
-                    "id" => 2, 
-                    "thumbnail" => "https://picsum.photos/200", 
-                    "name" => "Workout 2 - Split", 
-                    "duration" => "54 Minutes" 
+                    [
+                        "id" => 2, 
+                        "thumbnail" => "https://picsum.photos/200", 
+                        "name" => "Workout 2 - Split", 
+                        "duration" => "54 Minutes",
+                    ]
                 ],
             ],
         ];
