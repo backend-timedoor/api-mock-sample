@@ -2,11 +2,14 @@
 
 namespace App\Exceptions;
 
+use App\Exceptions\Concerns\ExceptionFormatter;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    use ExceptionFormatter;
+    
     /**
      * A list of exception types with their corresponding custom log levels.
      *
@@ -47,4 +50,24 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    /**
+     * List of url path that use custom Exception Format. You can use Regex in the list
+     *
+     * @return array<string>
+     */
+    protected function urlPathPattern()
+    {
+        return [
+            'api/v[1-9]+/.*'
+        ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function shouldReturnJson($request, Throwable $e)
+    {
+        return $request->expectsJson() || $this->shouldCustomFormat($request);
+    } 
 }
